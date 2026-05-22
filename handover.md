@@ -8,7 +8,7 @@ Audience: Dan, Claude, next Codex agent
 
 I reviewed the DexRoboKnix orientation docs, artefact register, compiled artefacts, archive folders, and the local ADE workspace. I then produced canonical content, working-system completion specs, seeded the local repo structure, copied the working artefacts into their canonical repo folders, added repo status docs and helpers, validated the copied systems where practical, and prepared a corrected GitHub publish script.
 
-GitHub repository creation is still blocked by organisation permissions: the authenticated GitHub account `danichese` can read the `Dex-RoboKnix` org but cannot create repositories there.
+Update after rerunning `C:\Users\Dan\Downloads\setup-dr-repos.ps1`: the GitHub org permission issue is now resolved. The setup script created the eight Core/Enterprise repos it defines. I also created the missing L1 `Dex_RoboKnix` repo, connected the local seeded repos to their remotes, merged the script-created placeholder README history non-destructively, and pushed the full local content to GitHub.
 
 ## Files Created or Updated
 
@@ -50,17 +50,17 @@ All local repos have been initialized on `main` and committed.
 
 | Repo | Local path | Current commit | Status |
 | --- | --- | --- | --- |
-| `Dex_RoboKnix` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\l1` | `c555c14` before this handover commit | Clean before handover file |
-| `dexspine-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\core` | `272e248` | Clean |
-| `dexspine-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\enterprise` | `cf48f2a` | Clean |
-| `dexcli-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\dexcli\core` | `5738f23` | Clean |
-| `dexcli-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\dexcli\enterprise` | `f9fb7d1` | Clean |
-| `shadowos-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\core` | `70a84a1` | Clean |
-| `shadowos-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\enterprise` | `ca05602` | Clean |
-| `ade-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\Agent Desktop Environment\ade-core` | `548f2f3` | Clean |
-| `ade-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\Agent Desktop Environment\ade-enterprise` | `475f441` | Clean |
+| `Dex_RoboKnix` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\l1` | `67cbbfa` before this update | Clean before this update |
+| `dexspine-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\core` | `17b46ad` | Clean |
+| `dexspine-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\enterprise` | `aa9f36c` | Clean |
+| `dexcli-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\dexcli\core` | `f60ed47` | Clean |
+| `dexcli-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\dexspine\dexcli\enterprise` | `f6abc01` | Clean |
+| `shadowos-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\core` | `d7e29a7` | Clean |
+| `shadowos-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\enterprise` | `9863952` | Clean |
+| `ade-core` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\Agent Desktop Environment\ade-core` | `4846fb1` | Clean |
+| `ade-enterprise` | `C:\Users\Dan\Documents\Projects\DEXROBOKNIX\ShadowOS\Agent Desktop Environment\ade-enterprise` | `daf89a5` | Clean |
 
-Note: after adding this handover file, the L1 repo has one additional commit.
+Note: after this update, the L1 repo has one additional handover-refresh commit.
 
 ## Working Artefacts Moved Into Canonical Repo Folders
 
@@ -101,32 +101,29 @@ GitHub CLI status:
 - Authenticated account: `danichese`
 - Token scopes include `repo`, `read:org`, `workflow`
 
-Blocked action:
+Remote repos now exist and have seeded content pushed:
 
-- Creating repos under `Dex-RoboKnix`
+| Repo | Visibility | URL |
+| --- | --- | --- |
+| `Dex_RoboKnix` | Public | `https://github.com/Dex-RoboKnix/Dex_RoboKnix` |
+| `dexspine-core` | Public | `https://github.com/Dex-RoboKnix/dexspine-core` |
+| `dexspine-enterprise` | Private | `https://github.com/Dex-RoboKnix/dexspine-enterprise` |
+| `dexcli-core` | Public | `https://github.com/Dex-RoboKnix/dexcli-core` |
+| `dexcli-enterprise` | Private | `https://github.com/Dex-RoboKnix/dexcli-enterprise` |
+| `shadowos-core` | Public | `https://github.com/Dex-RoboKnix/shadowos-core` |
+| `shadowos-enterprise` | Private | `https://github.com/Dex-RoboKnix/shadowos-enterprise` |
+| `ade-core` | Public | `https://github.com/Dex-RoboKnix/ade-core` |
+| `ade-enterprise` | Private | `https://github.com/Dex-RoboKnix/ade-enterprise` |
 
-Error observed:
+Script execution note:
 
-```text
-GraphQL: danichese does not have the correct permissions to execute `CreateRepository` (createRepository)
-```
-
-Repos still missing remotely:
-
-- `Dex-RoboKnix/Dex_RoboKnix`
-- `Dex-RoboKnix/dexspine-core`
-- `Dex-RoboKnix/dexspine-enterprise`
-- `Dex-RoboKnix/dexcli-core`
-- `Dex-RoboKnix/dexcli-enterprise`
-- `Dex-RoboKnix/shadowos-core`
-- `Dex-RoboKnix/shadowos-enterprise`
-- `Dex-RoboKnix/ade-core`
-- `Dex-RoboKnix/ade-enterprise`
-
-Once Dan has org repo-creation permission, run:
+- Direct execution was blocked because the script is unsigned.
+- Running with execution-policy bypass exposed a Windows PowerShell encoding parse error around UTF-8 em dashes.
+- The script succeeded when read explicitly as UTF-8 and invoked with:
 
 ```powershell
-C:\Users\Dan\Documents\Projects\DEXROBOKNIX\l1\PUBLISH-TO-GITHUB.ps1
+$script = Get-Content -LiteralPath 'C:\Users\Dan\Downloads\setup-dr-repos.ps1' -Raw -Encoding UTF8
+Invoke-Expression $script
 ```
 
 ## Validation Performed
@@ -256,23 +253,21 @@ ShadowOS builds, but still needs:
 
 ## Recommended Next Sequence
 
-1. Fix GitHub org repo-creation permission for `danichese`.
-2. Run `PUBLISH-TO-GITHUB.ps1` from the L1 repo.
-3. Create an ADR for ShadowOS/ADE boundary before more ADE implementation.
-4. Resolve license matrix.
-5. Continue DexSpine Core:
+1. Create an ADR for ShadowOS/ADE boundary before more ADE implementation.
+2. Resolve license matrix.
+3. Continue DexSpine Core:
    - Add syntax docs.
    - Add examples.
    - Extend validator/test fixtures.
-6. Continue DexCLI Core:
+4. Continue DexCLI Core:
    - Provider abstraction.
    - `node-pty` cleanup fix.
    - DexSpine packet support.
-7. Continue ShadowOS Core:
+5. Continue ShadowOS Core:
    - Persistence hardening.
    - App registry.
    - Tests.
-8. Continue ADE Core:
+6. Continue ADE Core:
    - T045-T066 shell/control UI.
    - MCP server skeleton.
    - Permissioned tool registry.
@@ -286,14 +281,12 @@ Review:
 - DEXROBOKNIX/DexRProject files/DR-WORKING-SYSTEM-SPECS-v1.0.md
 
 Current state:
-- Local repos are seeded and committed.
-- GitHub publishing is blocked by Dex-RoboKnix org CreateRepository permission.
+- Local repos are seeded, committed, and pushed to GitHub.
 - DexSpine validates.
 - DexCLI tests pass with a known node-pty Windows cleanup issue.
 - ShadowOS builds with inherited dependency vulnerabilities.
 - ADE Phase 0 validated earlier; boundary decision remains critical.
 
 Next task:
-Resolve the GitHub org permission and publish the seeded repos, then create the ShadowOS/ADE boundary ADR before progressing ADE Phase 1.
+Create the ShadowOS/ADE boundary ADR before progressing ADE Phase 1, then resolve the license matrix and continue entity-specific implementation.
 ```
-
