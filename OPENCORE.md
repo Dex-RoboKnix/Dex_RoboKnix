@@ -19,14 +19,11 @@ Enterprise repos may add private connectors, managed deployment, commercial supp
 
 ## License Decision
 
-License is not finalized across the ecosystem.
+Finalized via [ADR 0002](file:///C:/Users/Dan/Documents/Projects/DEXROBOKNIX/docs/adr/0002-opencore-licensing-matrix.md):
 
-Known source signals:
+- **Core Repositories**: **AGPL-3.0** (GNU Affero General Public License v3.0).
+- **Enterprise Repositories**: Commercial Proprietary EULA.
 
-- ADE source currently uses AGPL language.
-- DexCLI archive includes an MIT license file.
-- DexSpine DEX838 material references PGL.
-- The master structure defines OpenCore but does not lock the exact license matrix.
+Existing MIT and PGL references in `dexcli-core` and `dexspine-core` will be updated to AGPL-3.0 prior to public repository release.
 
-Until Dan resolves this, public repos should say `License TBD` or preserve their existing license while clearly marking it as subject to final matrix review.
 
