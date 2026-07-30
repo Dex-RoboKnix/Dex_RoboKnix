@@ -22,6 +22,8 @@ This file records the ratified working structure as of 2026-05-22.
 - ADE depends on ShadowOS to expose a desktop to agents.
 - OpenCore applies at every active layer.
 
+**Historical naming note:** In earlier planning sessions, both "ADE" and "Shadow OS" were used interchangeably to refer to the same whole-product concept (the native desktop environment). The current, ratified meaning separates them: **ShadowOS** is the L2 desktop-in-a-tab product — the sovereign local desktop container providing windows, dock, menus, and persistence. **ADE** (Agent Desktop Environment) is the L3 MCP-observability component that sits under ShadowOS, bridging external LLM harnesses (Codex, Claude Desktop) into ShadowOS container instances for real-time agent work observation.
+
 ## Current Architecture Decision Needed
 
 The ADE implementation currently uses a native Tauri shell, while the ratified structure defines ShadowOS as the desktop and ADE as the agent-operability layer over it.
