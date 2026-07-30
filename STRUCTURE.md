@@ -22,7 +22,7 @@ This file records the ratified working structure as of 2026-05-22.
 - ADE depends on ShadowOS to expose a desktop to agents.
 - OpenCore applies at every active layer.
 
-**Historical naming note:** In earlier planning sessions, both "ADE" and "Shadow OS" were used interchangeably to refer to the same whole-product concept (the native desktop environment). The current, ratified meaning separates them: **ShadowOS** is the L2 desktop-in-a-tab product — the sovereign local desktop container providing windows, dock, menus, and persistence. **ADE** (Agent Desktop Environment) is the L3 MCP-observability component that sits under ShadowOS, bridging external LLM harnesses (Codex, Claude Desktop) into ShadowOS container instances for real-time agent work observation.
+**Historical naming note:** In earlier planning sessions, both "ADE" and "Shadow OS" were used interchangeably to refer to the same whole-product concept (the native desktop environment). The current, ratified meaning separates them: **ShadowOS** is the L2 desktop-in-a-tab product — the sovereign local desktop container providing windows, dock, menus, and persistence. **ADE** (Agent Desktop Environment) is the L3 MCP-observability component that sits under ShadowOS, bridging external LLM harnesses (Codex, Claude Desktop) into ShadowOS container instances for real-time agent work observation. The public `Dex-RoboKnix/ade-core` GitHub repo description still reads "Autonomous Desktop Environment" as of this writing — that is the pre-ratification name and has not been updated to match; **"Agent Desktop Environment" is the ratified meaning**, and the GitHub description should be corrected to match rather than treated as a second, competing definition.
 
 ## Current Architecture Decision Needed
 
