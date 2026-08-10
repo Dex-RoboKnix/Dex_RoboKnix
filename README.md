@@ -4,17 +4,21 @@
 
 DexRoboKnix is the parent organisation and governing structure for the DexRoboKnix ecosystem.
 
-It is not a single product. It is the layer map, operating philosophy, OpenCore model, and repo structure that keeps DexSpine, DexCLI, ShadowOS, and ADE aligned.
+It is not a single product. It is the layer map, operating philosophy, OpenCore model, and repo structure that keeps DexSpine, ShadowOS, DexCLI, DexFolio, and DexScape aligned.
 
 ## Layer Map
+
+Ratified 2026-08-09 (ADR-0012). L1 defines, L2 conforms; L3 is the components of exactly one L2 — see the root `CONTEXT.md` for the authoritative glossary.
 
 | Layer | Entity | Role |
 | --- | --- | --- |
 | L1 | DexRoboKnix | Parent brand, governance, repo map, OpenCore structure |
-| L2 | DexSpine | Deterministic cognitive infrastructure for LLM collaboration |
-| L3 under DexSpine | DexCLI | Terminal-agent team manager |
+| L1 | DexSpine | The standard L2 products conform to: DEX838, 8:3:8 Dexfilter, `dexspine-core` (reference implementation) |
 | L2 | ShadowOS | Local-first **native** desktop container (Tauri/Rust/SolidJS) — the desktop a person sees and drives |
-| L3 under ShadowOS | ADE | Agent Desktop Environment, the harness layer that lets an LLM drive a ShadowOS desktop instead of a person |
+| L2 | DexCLI | Gemini-first multi-agent swarm orchestrator, shipped via terminal and web; plays the Harness role toward ShadowOS |
+| L2 | DexFolio | Obsidian-style knowledge capture, independently installable and also hosted inside ShadowOS |
+| L2 | DexScape | Chromium-based browser — intent only, no repo, no code yet |
+| L3 under ShadowOS | ADE, shell, window manager, design system | ADE is the harness layer that lets an LLM drive a ShadowOS desktop instead of a person; none of these are shared components |
 
 ## OpenCore
 
