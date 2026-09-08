@@ -1,3 +1,0 @@
-# DexFolio embeds in ShadowOS as the same application, not a thin native wrapper
-
-DexFolio (L2) runs both standalone (installable outside ShadowOS) and inside ShadowOS as its default notes app — and these are the same application, unmodified, not a ShadowOS-native reimplementation sharing a core library. This was a real choice: the more conventional pattern in this repo (see Shell/ADE's core-plus-front-ends split) would have been a shared `folio-core` consumed by two different front-ends. Reusing the whole app instead means ShadowOS hosts a full second application inside itself, which has real consequences for app lifecycle, window/state ownership, and packaging that the `codebase-design` skill still needs to work out. Decided 2026-08-06 during a grilling session.
