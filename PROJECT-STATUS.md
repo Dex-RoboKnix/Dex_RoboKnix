@@ -1,21 +1,25 @@
 # Project Status
 
-Date: 2026-07-27
+Date: 2026-09-08
 
-| Entity | Current maturity | Next Codex-ready task | Main blocker |
-| --- | --- | --- | --- |
-| DexRoboKnix | L1 structure, canonical content, and ADRs 0001-0005 are ratified in `DEXROBOKNIX` | Push merged `main` to `origin` (local merge done, not yet pushed) | None — awaiting push from a machine with GitHub credentials |
-| DexSpine | Complete alpha corpus copied into `dexspine-core` | Add validator, syntax docs, examples, and package metadata | License conflict and cross-provider claims |
-| DexCLI | Working Gemini-first prototype copied into `dexcli-core` | Refactor to provider-agnostic terminal-agent team architecture | Provider scope and Windows PTY cleanup |
-| ShadowOS | Buildable browser desktop prototype copied into `shadowos-core`; window manager now wired to ADE IPC (Phase 1) | Persistence hardening, app registry, canonical naming, test coverage | None — boundary resolved via ADR 0001 |
-| ADE | Phase 1 complete: native desktop shell, window IPC, Lucent Glass titlebar, agent-harness boot sequence all shipped and tested | Continue T045-T066 shell/control UI, then Phase 2 (MCP server skeleton, permissioned tool registry) | None — boundary resolved via ADR 0001 (ADE is the native shell direction) |
+The current build target is **L1** — the machinery that produces the plans that
+produce the products (ADR-0012 §9). Every L2 product below is **pre-1.0 /
+prototype**: a goal with a working prototype, not a shipped product. Nothing here
+is described in the present tense as shipped.
 
-## Current Validation Notes
+| Entity | Layer | Maturity |
+| --- | --- | --- |
+| DexRoboKnix | L1 | Governance ratified through ADR-0017. Layer map (ADR-0012), OpenCore model, and repo structure are settled. |
+| DexSpine | L1 | Reference implementation (`dexspine-core`): DEX838 wire parser with strict mode, the 8:3:8 filter model, and the DexProduct decision primitives (framework manifest, promotion rule, evidence stamp, action record) landed per ADR-0013 through ADR-0017. The bidirectional generate/validate pipeline against a live target is the next major build. |
+| ShadowOS | L2 | Buildable native desktop prototype (Tauri/Rust/SolidJS); window manager wired to the ADE IPC layer. Prototype. |
+| DexCLI | L2 | Working Gemini-first multi-agent prototype. Prototype. |
+| DexFolio | L2 | Knowledge-capture prototype; runs standalone and hosted inside ShadowOS. Prototype. |
+| DexScape | L2 | Intent only — name reserved, no repo, no code. |
+| ADE | L3 (under ShadowOS) | Native shell, window IPC, and agent-harness boot sequence prototyped and tested. Prototype. |
 
-- ShadowOS prototype build passed with `npm run build`.
-- DexCLI prototype test suite passed with `npm test`, but emitted a Windows/Node 24 `node-pty` `AttachConsole failed` message after completion.
-- DexSpine alpha corpus has the expected 6 layers, each with 8 plan, 3 MVE, and 8 execute files.
-- ADE Phase 0 validation passed after dependency reinstall and clean Rust/Tauri rebuild.
-- Phase 1 (ADE native shell + ShadowOS window manager integration): all 4 issues in `.scratch/phase1-ade-shadowos/issues/` completed; full monorepo suite passes 15/15 (`node --test packages/*/test/*.test.js`).
-- `feat/T044-phase-0-gate-codex` has been merged into `main` locally. Not yet pushed to `origin` — no GitHub credentials available in the environment that did this merge.
+## Notes
 
+- The authoritative vocabulary and layer definitions live in [`CONTEXT.md`](CONTEXT.md);
+  the decisions behind them in [`docs/adr/`](docs/adr/).
+- "Enterprise" repositories are reserved placeholders only — see the OpenCore
+  section of the [README](README.md).
