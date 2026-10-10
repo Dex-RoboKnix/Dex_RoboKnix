@@ -1,3 +1,7 @@
+---
+provenance: AAC
+---
+
 # DexRoboKnix
 
 DexRoboKnix is the parent organisation and **L1 governance layer** for the
@@ -39,3 +43,23 @@ The license matrix is tracked in [`OPENCORE.md`](OPENCORE.md).
 - [`OPENCORE.md`](OPENCORE.md) — the OpenCore licensing model.
 - [`STRUCTURE.md`](STRUCTURE.md) — repository structure.
 - [`PROJECT-STATUS.md`](PROJECT-STATUS.md) — current L1 maturity.
+
+## Layer and use
+
+**Layer: L1** (defines). **Used by dex.md for:** the governance rules (OpenCore licensing, naming, provenance tags, layer map) that every Dex repo is measured against. Pre-1.0.
+
+## Which document do I read?
+
+| I want to... | Read |
+|---|---|
+| Know what is in every repo, and where | [`SITEMAP.md`](SITEMAP.md) |
+| Understand the licensing split | [`OPENCORE.md`](OPENCORE.md) |
+| See the repo structure | [`STRUCTURE.md`](STRUCTURE.md) |
+| See current maturity | [`PROJECT-STATUS.md`](PROJECT-STATUS.md) |
+| Build, test or scan as an LLM | [`START.md`](START.md) |
+| Cut a release | [`RELEASING.md`](RELEASING.md) |
+| Read the docs | [`docs/`](docs/README.md) |
+
+## Licence
+
+OpenCore: AGPL-3.0 Core ([`LICENSE`](LICENSE)). Governance has no Enterprise edition.
